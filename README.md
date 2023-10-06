@@ -32,7 +32,7 @@ Firstly, change DB_CONNECTION TO **sqlite** and then comment out the other DB re
     # DB_USERNAME=root
     # DB_PASSWORD=
 
-Then,
+Then, run the following command to create a sqlite file,
 
 ```bash
 touch database/database.sqlite
