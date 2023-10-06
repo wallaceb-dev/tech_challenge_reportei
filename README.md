@@ -11,12 +11,6 @@ docker exec -it github-explorer-app composer install
 ```bash
 docker exec -it github-explorer-app npm run build
 ```
-```bash
-docker exec -it github-explorer-app php artisan key:generate
-```
-```bash
-docker exec -it github-explorer-app php artisan migrate
-```
 
 Then, let's edit .env while creating our OAuth App,
 
@@ -38,6 +32,15 @@ Then, run the following command to create a sqlite file,
 touch database/database.sqlite
 ```
 
+After that, run the commands below,
+
+```bash
+docker exec -it github-explorer-app php artisan key:generate
+```
+```bash
+docker exec -it github-explorer-app php artisan migrate
+```
+
 Now, go to [Github OAuth App Creation](https://github.com/settings/applications/new) and then,
 
  - Give it a name
@@ -47,3 +50,5 @@ Now, go to [Github OAuth App Creation](https://github.com/settings/applications/
  - Then copy ```Client ID``` and paste it into ```GITHUB_CLIENT_ID inside .env```
  - Generate a new ```Client secret```, copy the newly generated hash and paste it into ```GITHUB_CLIENT_SECRET```, also inside ```.env```
  - Still inside ```.env```, set ```GITHUB_CALLBACK_URI``` to ```http://localhost:8000/auth/github/callback```
+
+ Now access your [localhost](localhost:8000) and you're good to go!
