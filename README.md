@@ -32,11 +32,16 @@ Firstly, change DB_CONNECTION TO **sqlite** and then comment out the other DB re
     # DB_USERNAME=root
     # DB_PASSWORD=
 
+Then,
+
+```bash
+touch database/database.sqlite
+```
 
 Now, go to [Github OAuth App Creation](https://github.com/settings/applications/new) and then,
 
  - Give it a name
- - Set ```Homepage URL to``` ```http://localhost:8000```
+ - Set ```Homepage URL``` to ```http://localhost:8000```
  - Set ```Authorization callback URL``` to ```http://localhost:8000/auth/github/callback```
  - Submit it
  - Then copy ```Client ID``` and paste it into ```GITHUB_CLIENT_ID inside .env```
