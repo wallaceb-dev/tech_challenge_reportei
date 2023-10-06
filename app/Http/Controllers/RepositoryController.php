@@ -94,7 +94,6 @@ class RepositoryController extends Controller
 
             return view('repository.show', compact('repo', 'chart', 'selectedDate'));
         } catch (Throwable $th) {
-            dd($th->getMessage());
             return Redirect::to('/repos')->withErrors(['Ops! Something went wrong while loading your repository. Please, try again later.']);
         }
     }
